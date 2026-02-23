@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lisa — Fan Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Fancy Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND + COLOR OVERLAY ANIMATION */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url("https://i.pinimg.com/736x/bb/d0/65/bbd0655678d038176f318432eadcc78c.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #fff;
+}
+
+/* Animated color overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background: linear-gradient(120deg,
+    rgba(255,0,150,0.25),
+    rgba(0,150,255,0.25),
+    rgba(255,255,0,0.25)
+  );
+  animation: colorShift 12s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes colorShift {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(90deg); }
+  100% { filter: hue-rotate(180deg); }
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.45);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ffb7ff;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(0,0,0,0.55);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* GALLERY */
+.section-title {
+  max-width: 1100px;
+  margin: 3rem auto 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* VIDEO */
+.video-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background: rgba(0,0,0,0.55);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* BIO */
+.bio {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(0,0,0,0.55);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.bio h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">LISA</div>
+    <div>
+      <a href="#hero">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#video">Playlist</a>
+      <a href="#bio">About</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <h1>Lalisa Manobal</h1>
+  <h2>Global Icon • Performer • Fashion Muse</h2>
+  <p>
+    Lalisa Manobal, known mononymously as Lisa, is a Thai rapper, singer, dancer, and actress.
+    She is one of the most influential K-pop idols worldwide, celebrated for her unmatched dance
+    skills, charisma, rap delivery, and fashion impact.
+  </p>
+</section>
+
+<!-- GALLERY -->
+<h3 id="gallery" class="section-title">Gallery</h3>
+<section class="gallery">
+  <img src="https://i.pinimg.com/736x/49/25/5c/49255c80dd0319727f94e054db5bf8c9.jpg">
+  <img src="https://i.pinimg.com/736x/fb/b1/0a/fbb10a27d65553713569f602089da45d.jpg">
+  <img src="https://i.pinimg.com/736x/4f/8c/28/4f8c2877a5dd719b1c4fca16f7e80c6e.jpg">
+  <img src="https://i.pinimg.com/736x/82/59/35/8259356b91c0af973ab2259bbe7a95a1.jpg">
+  <img src="https://i.pinimg.com/736x/37/fc/94/37fc942a2df5f4cdab1316e8c46bb98a.jpg">
+  <img src="https://i.pinimg.com/736x/77/6f/8f/776f8fb8c1e71aa01e5343394caa3b3d.jpg">
+  <img src="https://i.pinimg.com/736x/0b/c8/96/0bc8961bf60474f1dd60f37197682ff1.jpg">
+  <img src="https://i.pinimg.com/736x/28/29/06/28290631cc7b0771b1133e71da2b70e7.jpg">
+  <img src="https://i.pinimg.com/736x/ec/e2/02/ece20201756c07db9fdca1b0dff651bf.jpg">
+  <img src="https://i.pinimg.com/736x/fd/c2/9a/fdc29a96cfe41f817788c0a85ef78499.jpg">
+  <img src="https://i.pinimg.com/736x/50/96/5f/50965faea8f51dce705e701f46ee920b.jpg">
+</section>
+
+<!-- PLAYLIST -->
+<h3 id="video" class="section-title">Playlist</h3>
+<section class="video-section">
+  <div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_kmGTbkuCdlDMn7AJLY0fo5mTKRKaX8CSQ"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- BIO -->
+<h3 id="bio" class="section-title">About Lisa</h3>
+<section class="bio">
+  <h3>Biography</h3>
+  <p>
+    Lalisa Manobal, known mononymously as Lisa, is a Thai rapper, singer, dancer, and actress.
+    Born March 27, 1997, she is widely regarded as one of the most influential K-pop idols globally.
+    She is the main dancer, lead rapper, sub-vocalist, and maknae of BLACKPINK.
+  </p>
+
+  <p>
+    She trained for 5 years under YG Entertainment after winning a 2010 audition in Thailand.
+    BLACKPINK debuted in 2016 with “Boombayah” and “Whistle,” and has since become one of the
+    biggest girl groups in history.
+  </p>
+
+  <p>
+    Lisa debuted solo in 2021 with “Lalisa” and “Money,” breaking global records. She later founded
+    LLOUD and released her first full album “Alter Ego” in 2025, featuring collaborations with
+    Doja Cat, Rosalía, Future, and more.
+  </p>
+
+  <p>
+    She is also a global fashion icon, ambassador for Celine and Bulgari, and has appeared in
+    major acting roles including The White Lotus Season 3.
+  </p>
+</section>
+
+<footer>
+  Fan-made Lisa website • All rights belong to their respective owners
+</footer>
+
+</body>
+</html>
